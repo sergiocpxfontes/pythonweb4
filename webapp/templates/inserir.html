@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ titulo }}.</h2>
+
+
+<form action="/inserirtarefa" method="post">
+    <p>Codigo:<input type="text" name="txtcodigo" value="" /></p>
+    <p>Descricao:<input type="text" name="txtdescricao" value="" /></p>
+    <p>Estado:<input type="text" name="txtestado" value="" /></p>
+    <p><input type="submit" value="Inserir" /></p>
+</form>
+
+{% endblock %}

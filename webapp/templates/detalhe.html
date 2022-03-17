@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ titulo }}.</h2>
+
+<p>Codigo:{{tarefa.Id}}</p>
+<p>Descricao:{{tarefa.Descricao}}</p>
+<p>Estado:{{tarefa.Estado}}</p>
+<p><a href="{{tarefa.Url}}" target="_blank"> Download</a></p>
+
+<p>
+    <a href="/tarefas">tarefas</a> |
+    <a href="/editar/{{tarefa.Id}}">editar</a> |
+    <a href="/eliminar/{{tarefa.Id}}">eliminar</a>
+</p>
+<form action="/upload/{{tarefa.Id}}" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" />
+    <p><input type="submit" value="Upload" /></p>
+</form>
+    {% endblock %}

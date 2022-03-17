@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+ sevidorweb:
+  build:
+   context: .
+   dockerfile: dockerfile
+  container_name: sevidorweb
+  restart: unless-stopped
+  volumes:
+   - ./webapp/:/var/www/webapp/
+  ports:
+   - "8091:8091"
+ mysqldb:
+  image: mysql:5.7.22
+  container_name: mysqldb
+  environment:
+   MYSQL_DATABASE: tarefasdb
+   MYSQL_ROOT_PASSWORD: admins
+  ports:
+   - "3306:3306"
+  volumes:
+    - ./scripts/ddl.sql:/docker-entrypoint-initdb.d/1.sql
+    - ./scripts/dml.sql:/docker-entrypoint-initdb.d/2.sql

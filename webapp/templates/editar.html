@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ titulo }}.</h2>
+
+
+<form action="/atualizartarefa" method="post">
+    <input type="hidden" name="txtcodigo" value="{{tarefa.Id}}" />
+    <p>Descricao:<input type="text" name="txtdescricao" value="{{tarefa.Descricao}}" /></p>
+    <p>Estado:<input type="text" name="txtestado" value="{{tarefa.Estado}}" /></p>
+    <p><input type="submit" value="Atualizar" /></p>
+</form>
+
+{% endblock %}

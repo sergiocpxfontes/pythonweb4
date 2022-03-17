@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ titulo }}.</h2>
+
+<p>
+    <a href="{{url_for('inserir')}}">Nova Tarefa</a>
+</p>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Descricao</th>
+        <th>Estado</th>
+        <th colspan="3"></th>
+    </tr>
+    {% for t in tarefas %}
+    <tr>
+        <td>{{t.Id}}</td>
+        <td>{{t.Descricao}}</td>
+        <td>{{t.Estado}}</td>
+        <td colspan="3"><a href="detalhe/{{t.Id}}">detalhe</a> |
+        <a href="editar/{{t.Id}}">editar</a> |
+        <a href="eliminar/{{t.Id}}">eliminar</a></td>
+    </tr>
+
+    {% endfor %}
+</table>
+
+
+{% endblock %}
