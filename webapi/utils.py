@@ -70,7 +70,7 @@ class Utils:
     def ExecutaComandoMySQL(sql):
         resultado=0
         # Connect to the database
-        connection = pymysql.connect(host='mysqldb',
+        connection = pymysql.connect(host='127.0.0.1',
                              user='root',
                              password='admins',
                              database='tarefasdb',
@@ -91,7 +91,7 @@ class Utils:
         
         try:
             # Connect to the database
-            connection = pymysql.connect(host='mysqldb',
+            connection = pymysql.connect(host='127.0.0.1',
                              user='root',
                              password='admins',
                              database='tarefasdb',
