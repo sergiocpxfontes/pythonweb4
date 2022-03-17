@@ -11,8 +11,8 @@ class TestWebApp(unittest.TestCase):
 
     def test_greeting(self):
         rv = self.app.get('/home')
-        self.assertIn('Sergio', str(rv.data))
-        #self.assertIn('My Flask Application', str(rv.data))
+        #self.assertIn('Sergio', str(rv.data))
+        self.assertIn('My Flask Application', str(rv.data))
 
 if __name__ =="__main__":
     unittest.main()
