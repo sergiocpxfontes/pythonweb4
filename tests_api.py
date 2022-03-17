@@ -14,7 +14,7 @@ class TestWebApp(unittest.TestCase):
 
         esperado = '[{"Id": 1, "Descricao": "enviar email", "Estado": 0, "Url": "www.rumos.pt"}, {"Id": 2, "Descricao": "telefonar", "Estado": 0, "Url": "www.rumos.pt"}]'
 
-        self.assertNotEqualEqual(resultado,esperado)
+        self.assertNotEqual(resultado,esperado)
 if __name__ =="__main__":
     unittest.main()
     #unittest.main(testRunner = xmlrunner.XMLTestRunner(output='relatorio-testes'))
